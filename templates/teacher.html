@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Teacher's data</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Department</th>
+            <th>Actions</th>
+        </tr>
+        {% for i in form %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.phone}}</td>
+            <td>{{i.department}}</td>
+            <td>
+                <a href="addteacher"><button>Add</button></a>
+                <a href="updateteacher/{{i.id}}"><button>Update</button></a>
+                <a href="deleteteacher/{{i.id}}"><button>Delete</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/Logout" style="color: red; text-decoration: none;">Logout</a></div>
+</body>
+</html>
